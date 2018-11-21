@@ -2,3 +2,7 @@
 \.idea/
 
 TestDjangular\.iml
+
+backend/src/djangularTest/__pycache__/
+
+backend/src/static/

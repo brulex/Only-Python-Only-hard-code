@@ -124,3 +124,4 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-root')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+APPEND_SLASH = True

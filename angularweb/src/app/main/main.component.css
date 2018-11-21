@@ -1,0 +1,9 @@
+.title-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+#container, .main-container {
+  margin: 25%;
+  margin-top: 16px !important;
+}
+
