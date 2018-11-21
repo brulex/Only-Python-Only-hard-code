@@ -1,33 +1,32 @@
 import {Component, OnInit} from '@angular/core';
-import {MainService} from "../services/main.service";
-import {Lessons} from "../models/lessons";
+import {Content} from "../models/content";
 import {Router} from "@angular/router";
+import {LessonService} from "../services/lesson.service";
+import {SiteNavigator} from "../site.navigator";
 
 @Component({
   selector: 'app-lessons',
   templateUrl: './lessons.component.html',
-  styleUrls: ['./lessons.component.css']
+  styleUrls: ['./lessons.component.css', '../app.component.css']
 })
 export class LessonsComponent implements OnInit {
-  lessonsList: Lessons[];
+  lessonsList: Content[];
+  siteNavigator: SiteNavigator;
 
-  constructor(private mainService: MainService,
+  constructor(private lessonService: LessonService,
               private router: Router) {
+    this.siteNavigator = new SiteNavigator(router);
+    this.lessonsList = [];
   }
 
   ngOnInit() {
-    let a = this.mainService.getLossonsData();
-    this.lessonsList = [];
+    let a = this.lessonService.getLossonsData();
     a.forEach(element => {
       this.lessonsList.push
       ({
         title: element.title,
-        lesson_id: element.lesson_id
+        content_id: element.content_id
       });
     });
-  }
-
-  goLesson(lesson_id: string) {
-    this.router.navigate(['/lesson' , lesson_id ]);
   }
 }

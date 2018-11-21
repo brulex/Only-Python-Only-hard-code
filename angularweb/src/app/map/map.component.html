@@ -1,6 +1,16 @@
 <div class="container main-container">
-  <h1 style=" text-align: center; margin-top: inherit">Уроки питона</h1>
-  <p>Самоучитель Python 3, собранный из материалов данного сайта. Предназначен в основном для тех, кто хочет изучить
-    язык программирования Python с нуля.</p>
+  <h1 style=" text-align: center; margin-top: inherit">Карта сайта</h1>
+  <mat-list>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Курсы</h3>
+    <mat-list-item *ngFor="let mapItem of mapCoursesList">
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourse(mapItem.content_id)" style="text-align: left">{{mapItem.title}}</button>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Уроки</h3>
+    <mat-list-item *ngFor="let mapItem of mapLesssonsList">
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goLesson(mapItem.content_id)" style="text-align: left">{{mapItem.title}}</button>
+    </mat-list-item>
+  </mat-list>
 </div>
 

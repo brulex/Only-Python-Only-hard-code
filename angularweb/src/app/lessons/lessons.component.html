@@ -5,7 +5,7 @@
 
   <mat-list>
     <mat-list-item *ngFor="let lessonItem of lessonsList">
-      <button mat-flat-button mat-line (click)="goLesson(lessonItem.lesson_id)" style="text-align: left">{{lessonItem.title}}</button>
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goLesson(lessonItem.content_id)" style="text-align: left">{{lessonItem.title}}</button>
     </mat-list-item>
   </mat-list>
 </div>
