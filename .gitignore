@@ -6,3 +6,5 @@ TestDjangular\.iml
 backend/src/djangularTest/__pycache__/
 
 backend/src/static/
+backend/db.sqlite3
+backend/__pycache__
