@@ -20,13 +20,17 @@ export class LessonsComponent implements OnInit {
   }
 
   ngOnInit() {
-    let a = this.lessonService.getLossonsData();
-    a.forEach(element => {
-      this.lessonsList.push
-      ({
-        title: element.title,
-        content_id: element.content_id
+    this.lessonService.getLossonsData().subscribe(response => {
+        response.forEach(element => {
+          this.lessonsList.push
+          ({
+            title: element.title,
+            content_id: element.id
+          });
+        });
+      },
+      error => {
+        alert(error);
       });
-    });
   }
 }

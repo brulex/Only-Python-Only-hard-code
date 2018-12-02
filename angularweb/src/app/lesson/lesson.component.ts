@@ -8,8 +8,9 @@ import {LessonService} from "../services/lesson.service";
   styleUrls: ['./lesson.component.css', '../app.component.css']
 })
 export class LessonComponent implements OnInit {
-  content_id: string;
+  title: string;
   lessonPage: string;
+  content_id: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -19,7 +20,13 @@ export class LessonComponent implements OnInit {
 
   ngOnInit() {
     this.content_id = this.activatedRoute.snapshot.paramMap.get('content_id');
-    this.lessonPage = this.lessonService.getLessonContent(this.content_id);
+    this.lessonService.getLessonContent(this.content_id).subscribe(value => {
+      console.log(this.lessonPage = value[0].content);
+      this.title = value[0].title;
+      this.lessonPage = value[0].content;
+    },error => {
+      alert(JSON.parse(error));
+    });
   }
 
 }

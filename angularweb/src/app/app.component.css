@@ -3,6 +3,11 @@
   text-align: center;
 }
 #container, .main-container {
-  margin: 25%;
-  margin-top: 16px !important;
+  padding: 16px !important;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
 }
