@@ -1,7 +1,7 @@
 <div class="container main-container">
-  <h1 style=" text-align: center; margin-top: inherit">Карта сайта</h1>
+  <h1>Карта сайта</h1>
+  <mat-divider></mat-divider>
   <mat-list>
-    <mat-divider></mat-divider>
     <h3 mat-subheader>Курсы</h3>
     <mat-list-item *ngFor="let mapItem of mapCoursesList">
       <button mat-flat-button mat-line (click)="this.siteNavigator.goCourse(mapItem.content_id)" style="text-align: left">{{mapItem.title}}</button>

@@ -1,0 +1,6 @@
+.col {
+  padding: 10px; /* Поля */
+
+  word-wrap: break-word; /* Перенос слов */
+  white-space: pre-wrap;
+}
