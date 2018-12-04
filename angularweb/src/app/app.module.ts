@@ -11,6 +11,7 @@ import {LessonsComponent} from './lessons/lessons.component';
 import {CoursesComponent} from './courses/courses.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
+import { DisqusModule } from 'ngx-disqus';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CourseComponent } from './course/course.component';
     CourseComponent
   ],
   imports: [
+    DisqusModule.forRoot('ngx'),
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
