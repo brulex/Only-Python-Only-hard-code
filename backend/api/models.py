@@ -7,20 +7,50 @@ def generate_comment_id():
 
 
 class Courses(models.Model):
-    name = models.CharField(max_length=255, null=False)
+
+    name = models.CharField(
+        max_length=255,
+        null=False
+    )
 
     def __str__(self):
         return self.name
 
 
 class Lessons(models.Model):
-    title = models.CharField(max_length=255, null=False)
-    content = models.TextField(null=False)
-    pub_date = models.DateField("publication date", null=False)
 
-    comment_id = models.CharField(max_length=60, null=False, default=generate_comment_id())
-    order_in_course = models.IntegerField(null=True)
-    course_id = models.ForeignKey(Courses, on_delete=models.PROTECT, null=True)
+    title = models.CharField(
+        max_length=255,
+        null=False
+    )
+
+    content = models.TextField(
+        null=False
+    )
+
+    pub_date = models.DateField(
+        verbose_name="publication date",
+        null=False
+    )
+
+    comment_id = models.CharField(
+        max_length=60,
+        null=False,
+        default=generate_comment_id(),
+        editable=False
+    )
+
+    order_in_course = models.IntegerField(
+        null=True,
+        blank=True
+    )
+
+    course_id = models.ForeignKey(
+        to=Courses,
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.title
