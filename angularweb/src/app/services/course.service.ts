@@ -1,21 +1,24 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
 
   getCoursesData() {
-    return [
-      {title: "Курс \"Python: программирование на каждый день и сверхбыстрое прототипирование\"", content_id: "1"},
-      {title: "Репетиторы Python на сайте \"UpStudy.ru\"!", content_id: "2"},
-      {title: "Новые курсы программирования на языке Python от Фоксфорд", content_id: "3"},
-      {title: "Бесплатные курсы", content_id: "4"},
-      ];
+    return this.http.get<any>('http://127.0.0.1:8000/api/courses/');
   }
-  getCourseContent(content_id: string) {
-    return '<h6>Этот сайт призван помочь начинающим и чайникам научиться программировать на python 3. Также здесь можно подробнее узнать об особенностях функционирования этого языка.</h6>';
+
+  getCourseContent(course_id: string) {
+    return this.http.get<any>('http://127.0.0.1:8000/api/courses/' + course_id + '/');
   }
+
+  getCourseLessonContent(course_id: string, content_id: string) {
+    return this.http.get<any>('http://127.0.0.1:8000/api/courses/' + course_id + '/' + content_id);
+  }
+
 }
