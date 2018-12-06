@@ -1,4 +1,3 @@
-import {LessonService} from "./services/lesson.service";
 import {Router} from "@angular/router";
 
 export class SiteNavigator {
@@ -9,7 +8,10 @@ export class SiteNavigator {
     this.router.navigate(['/lesson', content_id]);
   }
 
-  goCourse(content_id: string) {
-    this.router.navigate(['/course', content_id]);
+  goCourse(course_id: string) {
+    this.router.navigate(['/course', course_id]);
+  }
+  goCourseLesson(course_id: string, content_id: string) {
+    this.router.navigate(['/course/'+ course_id, content_id, ]);
   }
 }
