@@ -3,7 +3,7 @@ from .models import Lessons, Courses
 from .serializers import LessonsSerializer, LessonSerializer, CoursesSerializer
 
 
-# Create your views here.
+# View of Lessons
 
 
 class ListLessonsView(generics.ListAPIView):
@@ -14,12 +14,6 @@ class ListLessonsView(generics.ListAPIView):
     queryset = Lessons.objects.filter(course_id__isnull=True)
 
 
-class ListCoursesView(generics.ListAPIView):
-
-    serializer_class = CoursesSerializer
-    queryset = Courses.objects.all()
-
-
 class SingleLessonViewByLessonId(generics.ListAPIView):
     serializer_class = LessonSerializer
 
@@ -28,7 +22,15 @@ class SingleLessonViewByLessonId(generics.ListAPIView):
         return Lessons.objects.filter(id=id, course_id__isnull=True)
 
 
-class SingleLessonViewByCourseId(generics.ListAPIView):
+# View of Courses
+
+
+class ListCoursesView(generics.ListAPIView):
+    serializer_class = CoursesSerializer
+    queryset = Courses.objects.all()
+
+
+class ListOfCourseArticles(generics.ListAPIView):
     serializer_class = LessonSerializer
 
     def get_queryset(self):
