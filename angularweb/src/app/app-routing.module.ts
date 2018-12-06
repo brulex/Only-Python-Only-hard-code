@@ -16,9 +16,8 @@ const routes: Routes = [
   {path: 'course/:course_id', component: CourseComponent},
   {path: 'course/:course_id/:content_id', component: ArticleComponent},
   {path: 'map', component: MapComponent},
-  {path: '', component: MainComponent},
   {path: '', redirectTo: '/main', pathMatch: 'full'},
-  {path: '**', redirectTo: ''}
+  {path: '**', redirectTo: ''} // TODO: add page not found
 ];
 
 @NgModule({
