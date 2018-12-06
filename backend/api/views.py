@@ -11,7 +11,13 @@ class ListLessonsView(generics.ListAPIView):
     Provides a get method handler.
     """
     serializer_class = LessonsSerializer
-    queryset = Lessons.objects.all()
+    queryset = Lessons.objects.filter(course_id__isnull=True)
+
+
+class ListCoursesView(generics.ListAPIView):
+
+    serializer_class = CoursesSerializer
+    queryset = Courses.objects.all()
 
 
 class SingleLessonViewByLessonId(generics.ListAPIView):
@@ -19,7 +25,7 @@ class SingleLessonViewByLessonId(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs.get('lesson_id')
-        return Lessons.objects.filter(id=id)
+        return Lessons.objects.filter(id=id, course_id__isnull=True)
 
 
 class SingleLessonViewByCourseId(generics.ListAPIView):
@@ -28,9 +34,3 @@ class SingleLessonViewByCourseId(generics.ListAPIView):
     def get_queryset(self):
         course_id = self.kwargs.get('course_id')
         return Lessons.objects.filter(course_id=course_id)
-
-
-class ListCoursesView(generics.ListAPIView):
-
-    serializer_class = CoursesSerializer
-    queryset = Courses.objects.all()
