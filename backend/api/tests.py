@@ -1,8 +1,8 @@
 from django.urls import reverse
 from rest_framework.test import APITestCase, APIClient
 from rest_framework.views import status
-from .models import Lessons
-from .serializers import LessonsSerializer
+from .models import Articles
+from .serializers import ArticleTitleSerializer
 
 # Create your tests here.
 # tests for views
@@ -14,7 +14,7 @@ class BaseViewTest(APITestCase):
     @staticmethod
     def create_lesson(title="", content=""):
         if title != "" and content != "":
-            Lessons.objects.create(title=title, content=content)
+            Articles.objects.create(title=title, content=content)
 
     def setUp(self):
         # add test data
@@ -36,7 +36,7 @@ class GetAllLessonsTest(BaseViewTest):
             reverse("lessons-all")
         )
         # fetch the data from db
-        expected = Lessons.objects.all()
-        serialized = LessonsSerializer(expected, many=True)
+        expected = Articles.objects.all()
+        serialized = ArticleTitleSerializer(expected, many=True)
         self.assertEqual(response.data, serialized.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)

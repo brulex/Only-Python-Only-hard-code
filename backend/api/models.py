@@ -17,7 +17,7 @@ class Courses(models.Model):
         return self.name
 
 
-class Lessons(models.Model):
+class Articles(models.Model):
 
     title = models.CharField(
         max_length=255,

@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import ListLessonsView, ListCoursesView, SingleLessonViewByLessonId, ListOfCourseArticles
+from .views import ListOfAllLessonsView, ListOfAllCoursesView, ListOfCourseArticles, SingleArticleViewById
 
 urlpatterns = [
-    path('lessons/<int:lesson_id>/', SingleLessonViewByLessonId.as_view(), name="lessons-single"),
-    path('courses/<int:course_id>/', ListOfCourseArticles.as_view(), name="list-of-course-articles"),
+    path('lessons/', ListOfAllLessonsView.as_view(), name="lessons-all"),
+    path('lessons/<int:article_id>/', SingleArticleViewById.as_view(), name="single-article-of-lessons"),
 
-    path('lessons/', ListLessonsView.as_view(), name="lessons-all"),
-    path('courses/', ListCoursesView.as_view(), name="courses-all")
+    path('courses/', ListOfAllCoursesView.as_view(), name="courses-all"),
+    path('courses/<int:course_id>/', ListOfCourseArticles.as_view(), name="list-of-course-articles"),
+    path('courses/<int:course_id>/<int:article_id>', SingleArticleViewById.as_view(), name="single-article-of-course")
 ]
