@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.courseService.getCoursesData().subscribe(value => {
+    this.courseService.getCoursesList().subscribe(value => {
       value.forEach(element => {
         this.coursesList.push
         ({

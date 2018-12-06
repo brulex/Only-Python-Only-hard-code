@@ -20,7 +20,7 @@ export class LessonsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.lessonService.getLossonsData().subscribe(response => {
+    this.lessonService.getLossonsList().subscribe(response => {
         response.forEach(element => {
           this.lessonsList.push
           ({

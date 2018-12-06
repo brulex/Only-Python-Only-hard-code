@@ -10,7 +10,7 @@ export class LessonService {
   constructor(private http: HttpClient) {
   }
 
-  getLossonsData(): Observable<any> {
+  getLossonsList(): Observable<any> {
     return this.http.get<any>('http://127.0.0.1:8000/api/lessons/');
   }
 
