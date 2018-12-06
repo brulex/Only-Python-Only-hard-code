@@ -12,6 +12,7 @@ import {CoursesComponent} from './courses/courses.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { CourseComponent } from './course/course.component';
 import { DisqusModule } from 'ngx-disqus';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DisqusModule } from 'ngx-disqus';
     LessonsComponent,
     CoursesComponent,
     LessonComponent,
-    CourseComponent
+    CourseComponent,
+    ArticleComponent
   ],
   imports: [
     DisqusModule.forRoot('ngx'),
