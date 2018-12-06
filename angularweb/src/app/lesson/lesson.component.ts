@@ -11,7 +11,8 @@ export class LessonComponent implements OnInit {
   title: string;
   lessonPage: string;
   content_id: string;
-  pageID: string;
+  comment_id: string;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private lessonService: LessonService
@@ -24,10 +25,9 @@ export class LessonComponent implements OnInit {
       console.log(this.lessonPage = value[0].content);
       this.title = value[0].title;
       this.lessonPage = value[0].content;
-      this.pageID = this.content_id+"nikita-kamak-blog";
-    },error => {
+      this.comment_id = value[0].comment_id;
+    }, error => {
       alert(JSON.parse(error));
     });
   }
-
 }
