@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Content} from "../models/content";
+import {Models} from "../models/models";
 import {Router} from "@angular/router";
 import {LessonService} from "../services/lesson.service";
 import {SiteNavigator} from "../site.navigator";
@@ -10,7 +10,7 @@ import {SiteNavigator} from "../site.navigator";
   styleUrls: ['./lessons.component.css', '../app.component.css']
 })
 export class LessonsComponent implements OnInit {
-  lessonsList: Content[];
+  lessonsList: Models[];
   siteNavigator: SiteNavigator;
 
   constructor(private lessonService: LessonService,

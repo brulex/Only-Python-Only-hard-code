@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SiteNavigator} from "../site.navigator";
 import {Router} from "@angular/router";
 import {CourseService} from "../services/course.service";
-import {Content} from "../models/content";
+import {Models} from "../models/models";
 
 @Component({
   selector: 'app-courses',
@@ -11,7 +11,7 @@ import {Content} from "../models/content";
 })
 export class CoursesComponent implements OnInit {
   siteNavigator: SiteNavigator;
-  coursesList: Content[];
+  coursesList: Models[];
 
   constructor(private courseService: CourseService, private router: Router) {
     this.siteNavigator = new SiteNavigator(router);

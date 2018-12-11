@@ -1,7 +1,17 @@
-
 <div class="container main-container">
-  <h1>{{this.title}}</h1>
+  <h1>{{ this.title }}</h1>
   <mat-divider></mat-divider>
   <p class="col">{{ this.lessonPage }}</p>
-  <disqus [identifier]= "this.comment_id"></disqus>
+  <div class="row buttons"  >
+    <button mat-raised-button color="primary" class="prev-button"
+            [disabled]="this.pageOrder.prevPageID == -1"
+            (click)="onPrevClick()"><- Туда
+    </button>
+    <button mat-raised-button color="primary" class="next-button"
+            [disabled]="this.pageOrder.nextPageID == -1"
+            (click)="onNextClick()">Сюда ->
+    </button>
+  </div>
+
+  <disqus [identifier]="this.comment_id"></disqus>
 </div>

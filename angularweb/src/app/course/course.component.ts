@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseService} from "../services/course.service";
-import {Content} from "../models/content";
+import {Models} from "../models/models";
 import {SiteNavigator} from "../site.navigator";
 
 @Component({
@@ -11,8 +11,10 @@ import {SiteNavigator} from "../site.navigator";
 })
 export class CourseComponent implements OnInit {
   content_id: string;
-  courseLessonsList: Content[];
+  name: string;
+  courseLessonsList: Models[];
   siteNavigator: SiteNavigator;
+
   constructor(private activatedRoute: ActivatedRoute,
               private courseService: CourseService,
               private router: Router) {
@@ -22,16 +24,18 @@ export class CourseComponent implements OnInit {
 
   ngOnInit() {
     this.content_id = this.activatedRoute.snapshot.paramMap.get('course_id');
-    console.log(this.content_id);
+    this.activatedRoute.queryParams.subscribe(params => {
+      // Defaults to 0 if no query param provided.
+      this.name = params['name'];
+    });
     this.courseService.getCourseContent(this.content_id).subscribe(value => {
-        value.forEach(element => {
+      value.forEach(element => {
           this.courseLessonsList.push
           ({
             title: element.title,
             content_id: element.id
           });
         });
-
       }, error => {
         alert(error);
       }

@@ -8,10 +8,10 @@ export class SiteNavigator {
     this.router.navigate(['/lesson', content_id]);
   }
 
-  goCourse(course_id: string) {
-    this.router.navigate(['/course', course_id]);
+  goCourse(course_id: string, name: string) {
+    this.router.navigate(['/course', course_id],  { queryParams: { name: name }});
   }
-  goCourseLesson(course_id: string, content_id: string) {
-    this.router.navigate(['/course/'+ course_id, content_id, ]);
+  goCourseLesson(course_id: number, content_id: number) {
+    this.router.navigate(['/course/'+ course_id, content_id]);
   }
 }

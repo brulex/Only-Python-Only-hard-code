@@ -1,0 +1,17 @@
+.prev-button {
+  margin-right: 8px;
+  display: flex;
+  margin-left: auto;
+}
+
+.next-button {
+  margin-left: 8px;
+  display: flex;
+}
+
+.buttons{
+  display: flex;
+  margin-left: auto;
+  width: 40%;
+  align-items: end;
+}
