@@ -1,9 +1,27 @@
+from django.http import HttpResponse
+from django.views import View
 from rest_framework import generics
-from .models import Articles, Courses
-from .serializers import ArticleTitleSerializer, ArticleContentSerializer, CourseTitleSerializer
 
+from .models import Articles, Courses, Question
+from .serializers import ArticleTitleSerializer, ArticleContentSerializer, CourseTitleSerializer, QuestionsSerializer
+import json
 
 # View of Lessons
+
+
+class CheckAnswer(View):
+
+    def get(self, request, *args, **kwargs):
+        question_id = kwargs.get('question_id')
+        answer_id = kwargs.get('answer_id')
+        question_object = list(Question.objects.filter(id=question_id).values())[0]
+        verified = 0
+        if question_object['true_answer_id'] == answer_id:
+            verified = 1
+        response = {
+            "verified": verified
+        }
+        return HttpResponse(json.dumps(response), content_type="application/json")
 
 
 class ListOfAllLessonsView(generics.ListAPIView):
@@ -43,3 +61,11 @@ class ListOfCourseArticles(generics.ListAPIView):
     def get_queryset(self):
         course_id = self.kwargs.get('course_id')
         return Articles.objects.filter(course_id=course_id)
+
+
+class ListOfAllQuestions(generics.ListAPIView):
+    serializer_class = QuestionsSerializer
+
+    def get_queryset(self):
+        course_id = self.kwargs.get('course_id')
+        return Question.objects.filter(course_id=course_id)
