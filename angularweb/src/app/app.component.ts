@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   title = 'angularweb';
+  value = '';
 
   constructor(private router: Router) {
   }
@@ -26,5 +27,8 @@ export class AppComponent {
 
   goSiteMap() {
     this.router.navigate(['/map']);
+  }
+  onEnter(value: string) {
+    this.value = value;
   }
 }

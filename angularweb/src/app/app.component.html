@@ -1,14 +1,15 @@
-<mat-toolbar color="primary" class="mat-elevation-z4"style=" position: sticky;
-    position: -webkit-sticky; /* For macOS/iOS Safari */
-    top: 0; /* Sets the sticky toolbar to be on top */
-    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */" >
+<mat-toolbar color="primary" class="mat-elevation-z4 toolbar-style" >
   <mat-toolbar-row>
+    <img class="main-icon-style" src="https://img.icons8.com/metro/40/000000/python.png">
+    <span class="text-size">Python 3 для начинающих</span>
     <div class="title-center">
-      <button mat-button (click)="goMain()">Главная</button>
-      <button mat-button (click)="goPythonLessons()">Уроки питона</button>
-      <button mat-button (click)="goCourses()">Курсы</button>
-      <button mat-button (click)="goSiteMap()">Карта сайта</button>
+      <button class="text-size" mat-button (click)="goMain()">Главная</button>
+      <button class="text-size" mat-button (click)="goPythonLessons()">Уроки питона</button>
+      <button class="text-size" mat-button (click)="goCourses()">Курсы</button>
+      <button class="text-size" mat-button (click)="goSiteMap()">Карта сайта</button>
     </div>
+    <input class="search-field" (keyup.enter)="onEnter(box.value)" placeholder="Поиск по сайту">
+    <p>{{value}}</p>
   </mat-toolbar-row>
 </mat-toolbar>
 

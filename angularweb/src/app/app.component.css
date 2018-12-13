@@ -1,6 +1,16 @@
+.toolbar-style {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .title-center {
   flex: 1 1 auto;
   text-align: center;
+}
+.main-icon-style{
+  margin: 8px;
 }
 #container, .main-container {
   padding: 16px !important;
@@ -11,9 +21,21 @@
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
 }
-.col {
-  padding: 10px; /* Поля */
 
-  word-wrap: break-word; /* Перенос слов */
+.col {
+  padding: 10px;
+  word-wrap: break-word;
   white-space: pre-wrap;
 }
+
+.text-size {
+  font-size: 14pt;
+}
+.search-field {
+  margin: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  height: 30px;
+}
+
