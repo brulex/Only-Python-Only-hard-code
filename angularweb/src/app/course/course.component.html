@@ -1,17 +1,17 @@
-
 <div class="container main-container">
   <h1>Курс {{this.name}}</h1>
   <mat-divider></mat-divider>
   <mat-list>
     <mat-list-item *ngFor="let lessonItem of courseLessonsList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourseLesson(content_id, lessonItem.content_id)" style="text-align: left" >{{lessonItem.title}}</button>
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourseLesson(content_id, lessonItem.content_id)"
+              style="text-align: left">{{lessonItem.title}}
+      </button>
     </mat-list-item>
-    <div *ngIf="questionsList.length !== 0">
-    <h3 mat-subheader>Тесты для курса</h3>
-    <mat-list-item *ngFor="let lessonItem of questionsList; let i = index;">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goQuestions(content_id)" style="text-align: left" >Вопрос №{{i+1}}</button>
+    <mat-list-item>
+      <button mat-flat-button mat-line *ngIf="questionsList.length !== 0"
+              (click)="this.siteNavigator.goQuestions(content_id)" style="text-align: left"><b>Тесты для курса</b>
+      </button>
     </mat-list-item>
-    </div>
   </mat-list>
 </div>
 
