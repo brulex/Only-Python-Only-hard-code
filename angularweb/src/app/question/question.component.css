@@ -1,0 +1,34 @@
+.radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.selected-value {
+  margin: 15px 0;
+}
+
+.result-list {
+  margin-left: 16px;
+}
+.control-buttons {
+  margin-top: 16px;
+}
+
+.verified{
+  background-color: lime;
+  color: ghostwhite;
+  padding: 6px;
+  width: max-content;
+  border-radius: 10px
+}
+.not-verified{
+  background-color: red;
+  color: ghostwhite;
+  padding: 6px;
+  width: max-content;
+  border-radius: 10px
+}

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {CourseService} from "../services/course.service";
-import {Models} from "../models/models";
-import {SiteNavigator} from "../site.navigator";
+import {ActivatedRoute, Router} from '@angular/router';
+import {CourseService} from '../services/course.service';
+import {Models} from '../models/models';
+import {SiteNavigator} from '../site.navigator';
 
 @Component({
   selector: 'app-course',
@@ -13,6 +13,7 @@ export class CourseComponent implements OnInit {
   content_id: string;
   name: string;
   courseLessonsList: Models[];
+  questionsList: Models[];
   siteNavigator: SiteNavigator;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -20,6 +21,7 @@ export class CourseComponent implements OnInit {
               private router: Router) {
     this.siteNavigator = new SiteNavigator(router);
     this.courseLessonsList = [];
+    this.questionsList = [];
   }
 
   ngOnInit() {
@@ -40,6 +42,18 @@ export class CourseComponent implements OnInit {
         alert(error);
       }
     );
+    this.courseService.getQuestionList(Number(this.content_id)).subscribe(value => {
+      value.forEach(element => {
+        this.questionsList.push({
+          title: element.question,
+          content_id: element.id
+        });
+      });
+      console.log(this.questionsList);
+    },
+      error => {
+        alert(JSON.parse(error));
+      });
   }
 
 }

@@ -1,0 +1,51 @@
+<div class="container main-container" *ngIf="question_status === 'begin'">
+  <mat-horizontal-stepper >
+    <div *ngFor="let item of questionsList; let i = index">
+      <mat-step>
+        <ng-template matStepLabel>Вопрос №{{i+1}}</ng-template>
+        <p>{{item.questionData.title}}</p>
+        <mat-radio-group (change)="onChange($event)" class="radio-group">
+          <mat-radio-button class="radio-button" *ngFor="let answer of item.answersList"
+                            [value]="{question_id: i, answer: answer}">
+            {{answer.title}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div class="control-buttons">
+          <button mat-button matStepperPrevious>Обратно</button>
+          <button mat-button matStepperNext>Готово</button>
+        </div>
+      </mat-step>
+    </div>
+
+    <mat-step>
+      <ng-template matStepLabel>Результат</ng-template>
+      <div *ngFor="let item of questionsList; let i = index">
+        <h3>Вопрос № {{i + 1}}</h3>
+        <div class="result-list">
+          <p>{{item.questionData.title}}</p>
+          <p>Ваш ответ: <b>{{item.answer === null ? 'Нет ответа' : item.answer.title}}</b></p>
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+      <div class="control-buttons">
+        <button mat-button matStepperPrevious>Обратно</button>
+        <button mat-button (click)="checkAnswers()">Проверить</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+
+<div class="container main-container" *ngIf="question_status === 'ready' && send === receive">
+  <h2 style="text-align: center">Результат</h2>
+  <div *ngFor="let item of questionsList; let i = index">
+    <h3>Вопрос № {{i + 1}}</h3>
+    <div class="result-list">
+      <p>{{item.questionData.title}}</p>
+      <p *ngIf="item.verified === true" class="verified">Верно</p>
+      <p *ngIf="item.verified === false" class="not-verified">Неверно</p>
+      <p>Ваш ответ: <b>{{item.answer === null ? 'Нет ответа' : item.answer.title}}</b></p>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+  <h3>Рейтинг: <b>{{rating}}</b></h3>
+</div>

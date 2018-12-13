@@ -13,7 +13,14 @@ export interface CourseContent {
   articles: Models[];
 }
 
-export interface articleOrderIds {
+export interface QuestionContent {
+  questionData: Models;
+  answersList: Models[];
+  answer: Models;
+  verified: boolean;
+}
+
+export interface ArticleOrderIds {
   pageID: number;
   nextPageID: number;
   prevPageID: number;

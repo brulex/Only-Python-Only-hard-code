@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseService} from "../services/course.service";
-import {articleOrderIds, LessonContent} from "../models/models";
+import {ArticleOrderIds, LessonContent} from "../models/models";
 import {SiteNavigator} from "../site.navigator";
 
 @Component({
@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
   content_id: string;
   comment_id: string;
   courseLessonsList: LessonContent[];
-  pageOrder: articleOrderIds;
+  pageOrder: ArticleOrderIds;
   siteNavigator: SiteNavigator;
 
   constructor(

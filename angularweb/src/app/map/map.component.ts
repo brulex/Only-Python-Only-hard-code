@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Models, CourseContent} from "../models/models";
+import {CourseContent, Models} from "../models/models";
 import {SiteNavigator} from "../site.navigator";
 import {LessonService} from "../services/lesson.service";
 import {CourseService} from "../services/course.service";
@@ -36,20 +36,20 @@ export class MapComponent implements OnInit {
           },
           articles: null
         });
-          let content_id = this.mapCoursestList.length - 1;
-          this.courseService.getCourseContent(String(this.mapCoursestList[content_id].courseData.content_id)).subscribe(value => {
-              this.mapCoursestList[content_id].articles = [];
-              value.forEach(element => {
-                this.mapCoursestList[content_id].articles.push
-                ({
-                  title: element.title,
-                  content_id: element.id
-                });
+        let content_id = this.mapCoursestList.length - 1;
+        this.courseService.getCourseContent(String(this.mapCoursestList[content_id].courseData.content_id)).subscribe(value => {
+            this.mapCoursestList[content_id].articles = [];
+            value.forEach(element => {
+              this.mapCoursestList[content_id].articles.push
+              ({
+                title: element.title,
+                content_id: element.id
               });
-            }, error => {
-              alert(JSON.parse(error));
-            }
-          );
+            });
+          }, error => {
+            alert(JSON.parse(error));
+          }
+        );
 
       });
     }, error => {

@@ -27,7 +27,7 @@ export class CoursesComponent implements OnInit {
           content_id: element.id
         });
       });
-    },error => {
+    }, error => {
       alert(JSON.parse(error));
       }
     );

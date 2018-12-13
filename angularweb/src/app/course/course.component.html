@@ -6,6 +6,12 @@
     <mat-list-item *ngFor="let lessonItem of courseLessonsList">
       <button mat-flat-button mat-line (click)="this.siteNavigator.goCourseLesson(content_id, lessonItem.content_id)" style="text-align: left" >{{lessonItem.title}}</button>
     </mat-list-item>
+    <h3 mat-subheader>Тесты для курса</h3>
+    <mat-list-item *ngFor="let lessonItem of questionsList; let i = index;">
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goQuestions(content_id)" style="text-align: left" >Вопрос №{{i+1}}</button>
+    </mat-list-item>
   </mat-list>
+
+
 </div>
 
