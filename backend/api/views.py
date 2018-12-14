@@ -1,6 +1,7 @@
-from django.http import HttpResponse
 from django.views import View
 from rest_framework import generics
+from django.core import serializers
+from django.http import HttpResponse
 
 from .models import Articles, Courses, Question
 from .serializers import ArticleTitleSerializer, ArticleContentSerializer, CourseTitleSerializer, QuestionsSerializer
@@ -69,3 +70,16 @@ class ListOfAllQuestions(generics.ListAPIView):
     def get_queryset(self):
         course_id = self.kwargs.get('course_id')
         return Question.objects.filter(course_id=course_id)
+
+
+class Search(generics.ListAPIView):
+
+    def post(self, request):
+        title_name = request.data.get("title")
+        data = Articles.objects.filter(title__contains=title_name)
+        respons_in_json = serializers.serialize("json", data, fields=("title"))
+
+        return HttpResponse(respons_in_json)
+
+
+

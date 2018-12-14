@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import ListOfAllLessonsView, ListOfAllCoursesView, ListOfCourseArticles, SingleArticleViewById, ListOfAllQuestions, CheckAnswer
+from .views import ListOfAllLessonsView, ListOfAllCoursesView, ListOfCourseArticles, SingleArticleViewById, ListOfAllQuestions, CheckAnswer, Search
 
 urlpatterns = [
+    path('search/', Search.as_view(), name="search"),
     path('lessons/', ListOfAllLessonsView.as_view(), name="lessons-all"),
     path('lessons/<int:article_id>/', SingleArticleViewById.as_view(), name="single-article-of-lessons"),
     path('courses/', ListOfAllCoursesView.as_view(), name="courses-all"),
