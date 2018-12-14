@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CourseService} from '../services/course.service';
-import {Models} from '../models/models';
+import {Model} from '../models/model';
 import {SiteNavigator} from '../site.navigator';
 
 @Component({
@@ -12,8 +12,8 @@ import {SiteNavigator} from '../site.navigator';
 export class CourseComponent implements OnInit {
   content_id: string;
   name: string;
-  courseLessonsList: Models[];
-  questionsList: Models[];
+  courseLessonsList: Model[];
+  questionsList: Model[];
   siteNavigator: SiteNavigator;
 
   constructor(private activatedRoute: ActivatedRoute,

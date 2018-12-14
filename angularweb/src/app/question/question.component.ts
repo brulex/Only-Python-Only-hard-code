@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {QuestionContent} from '../models/models';
+import {QuestionContent} from '../models/model';
 import {CourseService} from '../services/course.service';
 import {ActivatedRoute} from '@angular/router';
 import {MatRadioChange} from '@angular/material';

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {CourseService} from "../services/course.service";
-import {ArticleOrderIds, LessonContent} from "../models/models";
+import {ArticleOrderIds, LessonContent} from "../models/model";
 import {SiteNavigator} from "../site.navigator";
 
 @Component({
@@ -49,7 +49,7 @@ export class ArticleComponent implements OnInit {
             content_id: element.id,
             order_in_course: element.order_in_course
           });
-          if (element.id == this.content_id) {
+          if (element.id === this.content_id) {
             this.pageOrder.pageID = element.order_in_course;
           }
         });

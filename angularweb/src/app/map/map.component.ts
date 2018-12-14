@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CourseContent, Models} from "../models/models";
+import {CourseContent, Model} from "../models/model";
 import {SiteNavigator} from "../site.navigator";
 import {LessonService} from "../services/lesson.service";
 import {CourseService} from "../services/course.service";
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 })
 export class MapComponent implements OnInit {
   mapCoursestList: CourseContent[];
-  mapLesssonsList: Models[];
+  mapLesssonsList: Model[];
   siteNavigator: SiteNavigator;
 
   constructor(private lessonService: LessonService,
