@@ -8,9 +8,7 @@
       <button class="text-size" mat-button (click)="goCourses()">Курсы</button>
       <button class="text-size" mat-button (click)="goSiteMap()">Карта сайта</button>
     </div>
-    <input class="search-field" (keyup.enter)="onEnter(box.value)" placeholder="Поиск по сайту">
-    <p>{{value}}</p>
+    <input #box class="search-field" (keyup.enter)="onEnter(box.value)" placeholder="Поиск по сайту">
   </mat-toolbar-row>
 </mat-toolbar>
-
 <router-outlet></router-outlet>

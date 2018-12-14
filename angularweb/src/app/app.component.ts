@@ -30,5 +30,7 @@ export class AppComponent {
   }
   onEnter(value: string) {
     this.value = value;
+    this.router.navigate(['/search', value]);
+    window.location.reload();
   }
 }

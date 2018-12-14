@@ -15,6 +15,7 @@ import { DisqusModule } from 'ngx-disqus';
 import { ArticleComponent } from './article/article.component';
 import { QuestionComponent } from './question/question.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     LessonComponent,
     CourseComponent,
     ArticleComponent,
-    QuestionComponent
+    QuestionComponent,
+    SearchComponent
   ],
   imports: [
     DisqusModule.forRoot('ngx'),

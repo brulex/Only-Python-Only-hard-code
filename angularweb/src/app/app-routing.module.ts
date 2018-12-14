@@ -1,13 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MainComponent} from "./main/main.component";
-import {MapComponent} from "./map/map.component";
-import {LessonsComponent} from "./lessons/lessons.component";
-import {CoursesComponent} from "./courses/courses.component";
-import {LessonComponent} from "./lesson/lesson.component";
-import {CourseComponent} from "./course/course.component";
-import {ArticleComponent} from "./article/article.component";
-import {QuestionComponent} from "./question/question.component";
+import {MainComponent} from './main/main.component';
+import {MapComponent} from './map/map.component';
+import {LessonsComponent} from './lessons/lessons.component';
+import {CoursesComponent} from './courses/courses.component';
+import {LessonComponent} from './lesson/lesson.component';
+import {CourseComponent} from './course/course.component';
+import {ArticleComponent} from './article/article.component';
+import {QuestionComponent} from './question/question.component';
+import {SearchComponent} from './search/search.component';
 
 const routes: Routes = [
   {path: 'main', component: MainComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'course/:course_id', component: CourseComponent},
   {path: 'course/:course_id/:content_id', component: ArticleComponent},
   {path: 'map', component: MapComponent},
+  {path: 'search/:search_title', component: SearchComponent},
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {path: '**', redirectTo: ''} // TODO: add page not found
 ];
