@@ -77,7 +77,7 @@ class Search(generics.ListAPIView):
     def post(self, request):
         title_name = request.data.get("title")
         data = Articles.objects.filter(title__contains=title_name)
-        respons_in_json = serializers.serialize("json", data, fields=("title"))
+        respons_in_json = serializers.serialize("json", data, fields=("title", "course_id"))
 
         return HttpResponse(respons_in_json)
 
