@@ -42,3 +42,7 @@
   height: 30px;
 }
 
+.navigation-button {
+  text-align: left;
+  padding-left: 8px !important;
+}

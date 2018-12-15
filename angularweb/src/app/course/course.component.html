@@ -1,15 +1,15 @@
 <div class="container main-container">
-  <h1>Курс {{this.name}}</h1>
+  <h1>{{this.name}}</h1>
   <mat-divider></mat-divider>
   <mat-list>
     <mat-list-item *ngFor="let lessonItem of courseLessonsList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourseLesson(content_id, lessonItem.content_id)"
-              style="text-align: left">{{lessonItem.title}}
+      <button class="navigation-button" mat-flat-button mat-line
+              (click)="this.siteNavigator.goCourseLesson(content_id, lessonItem.content_id)">{{lessonItem.title}}
       </button>
     </mat-list-item>
     <mat-list-item>
-      <button mat-flat-button mat-line *ngIf="questionsList.length !== 0"
-              (click)="this.siteNavigator.goQuestions(content_id)" style="text-align: left"><b>Тесты для курса</b>
+      <button class="navigation-button" mat-flat-button mat-line *ngIf="questionsList.length !== 0"
+              (click)="this.siteNavigator.goQuestions(content_id)"><b>Тесты для курса</b>
       </button>
     </mat-list-item>
   </mat-list>

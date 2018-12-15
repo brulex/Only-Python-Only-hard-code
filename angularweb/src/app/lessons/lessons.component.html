@@ -5,8 +5,8 @@
     язык программирования Python с нуля.</p>
   <mat-list>
     <mat-list-item *ngFor="let lessonItem of lessonsList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goLesson(lessonItem.content_id)"
-              style="text-align: left">{{lessonItem.title}}
+      <button class="navigation-button" mat-flat-button mat-line
+              (click)="this.siteNavigator.goLesson(lessonItem.content_id)">{{lessonItem.title}}
       </button>
     </mat-list-item>
   </mat-list>

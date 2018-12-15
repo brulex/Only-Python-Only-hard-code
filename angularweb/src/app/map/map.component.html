@@ -4,15 +4,16 @@
   <mat-list>
     <h3 mat-subheader>Курсы</h3>
     <ng-container *ngFor="let mapItem of mapCoursestList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourse(mapItem.courseData.content_id)"
-              style="text-align: left"><b>{{ mapItem.courseData.title }}</b>
+      <button class="navigation-button" mat-flat-button mat-line
+              (click)="this.siteNavigator.goCourse(mapItem.courseData.content_id)"><b>{{ mapItem.courseData.title }}</b>
       </button>
       <mat-list style="margin-left:30px;">
         <div *ngFor="let mapItemLow of mapItem.articles">
           <mat-list-item>
-            <button mat-flat-button mat-line
-                    (click)="this.siteNavigator.goCourseLesson(mapItem.courseData.content_id, mapItemLow.content_id)"
-                    style="text-align: left">{{ mapItemLow.title }}</button>
+            <button class="navigation-button" mat-flat-button mat-line
+                    (click)="this.siteNavigator.goCourseLesson(mapItem.courseData.content_id, mapItemLow.content_id)">{{
+              mapItemLow.title }}
+            </button>
           </mat-list-item>
         </div>
       </mat-list>
@@ -20,8 +21,9 @@
     <mat-divider></mat-divider>
     <h3 mat-subheader>Уроки</h3>
     <mat-list-item *ngFor="let mapItem of mapLesssonsList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goLesson(mapItem.content_id)"
-              style="text-align: left">{{ mapItem.title }}</button>
+      <button class="navigation-button" mat-flat-button mat-line
+              (click)="this.siteNavigator.goLesson(mapItem.content_id)">{{ mapItem.title }}
+      </button>
     </mat-list-item>
   </mat-list>
 </div>

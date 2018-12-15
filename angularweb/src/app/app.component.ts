@@ -30,7 +30,9 @@ export class AppComponent {
   onEnter(value: string) {
     if (value !== '') {
       this.router.navigate(['/search', value]);
-      window.location.reload();
+      if (this.router.url.includes('search')) {
+        window.location.reload();
+      }
     }
   }
 }
