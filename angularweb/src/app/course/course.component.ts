@@ -31,7 +31,7 @@ export class CourseComponent implements OnInit {
       this.name = params['name'];
     });
     this.courseService.getCourseContent(this.content_id).subscribe(value => {
-      value.forEach(element => {
+        value.forEach(element => {
           this.courseLessonsList.push
           ({
             title: element.title,
@@ -43,14 +43,14 @@ export class CourseComponent implements OnInit {
       }
     );
     this.courseService.getQuestionList(Number(this.content_id)).subscribe(value => {
-      value.forEach(element => {
-        this.questionsList.push({
-          title: element.question,
-          content_id: element.id
+        value.forEach(element => {
+          this.questionsList.push({
+            title: element.question,
+            content_id: element.id
+          });
         });
-      });
-      console.log(this.questionsList);
-    },
+        console.log(this.questionsList);
+      },
       error => {
         alert(JSON.parse(error));
       });

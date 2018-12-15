@@ -14,18 +14,20 @@
 .result-list {
   margin-left: 16px;
 }
+
 .control-buttons {
   margin-top: 16px;
 }
 
-.verified{
+.verified {
   background-color: lime;
   color: ghostwhite;
   padding: 6px;
   width: max-content;
   border-radius: 10px
 }
-.not-verified{
+
+.not-verified {
   background-color: red;
   color: ghostwhite;
   padding: 6px;

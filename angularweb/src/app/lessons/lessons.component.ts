@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Model} from "../models/model";
-import {Router} from "@angular/router";
-import {LessonService} from "../services/lesson.service";
-import {SiteNavigator} from "../site.navigator";
+import {Model} from '../models/model';
+import {Router} from '@angular/router';
+import {LessonService} from '../services/lesson.service';
+import {SiteNavigator} from '../site.navigator';
 
 @Component({
   selector: 'app-lessons',

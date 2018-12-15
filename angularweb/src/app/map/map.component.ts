@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CourseContent, Model} from "../models/model";
-import {SiteNavigator} from "../site.navigator";
-import {LessonService} from "../services/lesson.service";
-import {CourseService} from "../services/course.service";
-import {Router} from "@angular/router";
+import {CourseContent, Model} from '../models/model';
+import {SiteNavigator} from '../site.navigator';
+import {LessonService} from '../services/lesson.service';
+import {CourseService} from '../services/course.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class MapComponent implements OnInit {
           },
           articles: null
         });
-        let content_id = this.mapCoursestList.length - 1;
+        const content_id = this.mapCoursestList.length - 1;
         this.courseService.getCourseContent(String(this.mapCoursestList[content_id].courseData.content_id)).subscribe(value => {
             this.mapCoursestList[content_id].articles = [];
             value.forEach(element => {

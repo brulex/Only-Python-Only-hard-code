@@ -25,18 +25,17 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.search_title = this.activatedRoute.snapshot.paramMap.get('search_title');
     this.courseService.articlesSearch(this.search_title).subscribe(value => {
-        value.forEach(element => {
-          this.articlesList.push
-          ({
-            title: element.fields.title,
-            content_id: element.pk,
-            course_id: element.fields.course_id
-          });
+      value.forEach(element => {
+        this.articlesList.push
+        ({
+          title: element.fields.title,
+          content_id: element.pk,
+          course_id: element.fields.course_id
         });
-      }, error => {
-        alert(error);
-      }
-    );
+      });
+    }, error => {
+      alert(error);
+    });
   }
 
   navigateToPage(article: SearchModel) {

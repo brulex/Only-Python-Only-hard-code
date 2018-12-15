@@ -16,6 +16,7 @@ export class QuestionComponent implements OnInit {
   send = 0;
   receive = 0;
   rating = 0;
+
   constructor(private activatedRoute: ActivatedRoute,
               private courseService: CourseService) {
     this.questionsList = [{questionData: {title: '', content_id: 0}, answersList: null, answer: null, verified: null}];
@@ -61,7 +62,7 @@ export class QuestionComponent implements OnInit {
         this.courseService.checkAnswer(value.questionData.content_id, value.answer.content_id).subscribe(response => {
           this.receive++;
           value.verified = response.verified === 1;
-          this.rating += response.verified === 1 ? (100 / this.questionsList.length ) : 0;
+          this.rating += response.verified === 1 ? (100 / this.questionsList.length) : 0;
         }, error => {
           alert(error);
         });

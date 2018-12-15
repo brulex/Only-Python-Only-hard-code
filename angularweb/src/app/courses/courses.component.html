@@ -2,10 +2,11 @@
   <h1>Курсы</h1>
   <mat-divider></mat-divider>
   <p>Обзор различных курсов программирования на Python.</p>
-
   <mat-list>
     <mat-list-item *ngFor="let courseItem of coursesList">
-      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourse(courseItem.content_id, courseItem.title)" style="text-align: left">{{courseItem.title}}</button>
+      <button mat-flat-button mat-line (click)="this.siteNavigator.goCourse(courseItem.content_id, courseItem.title)"
+              style="text-align: left">{{courseItem.title}}
+      </button>
     </mat-list-item>
   </mat-list>
 </div>

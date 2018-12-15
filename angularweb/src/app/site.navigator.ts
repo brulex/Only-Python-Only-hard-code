@@ -1,4 +1,4 @@
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 export class SiteNavigator {
 

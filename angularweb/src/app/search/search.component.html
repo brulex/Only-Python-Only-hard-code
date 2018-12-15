@@ -1,9 +1,12 @@
 <div class="container main-container ">
   <h2 style="text-align: center" *ngIf="articlesList.length === 0">По запросу '{{search_title}}' ничего не найдено.</h2>
-  <h2 style="text-align: center" *ngIf="articlesList.length !== 0">Показаны результаты по запросу '{{search_title}}'</h2>
+  <h2 style="text-align: center" *ngIf="articlesList.length !== 0">Показаны результаты по запросу
+    '{{search_title}}'</h2>
   <mat-list>
     <mat-list-item *ngFor="let articleItem of articlesList">
-      <button mat-flat-button mat-line (click)="navigateToPage(articleItem)" style="text-align: left">{{articleItem.title}}</button>
+      <button mat-flat-button mat-line (click)="navigateToPage(articleItem)" style="text-align: left">
+        {{articleItem.title}}
+      </button>
     </mat-list-item>
   </mat-list>
 </div>

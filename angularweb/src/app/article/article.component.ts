@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {CourseService} from "../services/course.service";
-import {ArticleOrderIds, LessonContent} from "../models/model";
-import {SiteNavigator} from "../site.navigator";
+import {ActivatedRoute, Router} from '@angular/router';
+import {CourseService} from '../services/course.service';
+import {ArticleOrderIds, LessonContent} from '../models/model';
+import {SiteNavigator} from '../site.navigator';
 
 @Component({
   selector: 'app-article',
@@ -77,7 +77,7 @@ export class ArticleComponent implements OnInit {
         nextid = value.content_id;
       }
     });
-    console.log(Number(this.course_id), " ", nextid);
+    console.log(Number(this.course_id), ' ', nextid);
 
     this.siteNavigator.goCourseLesson(Number(this.course_id), nextid);
     window.location.reload();
@@ -90,7 +90,7 @@ export class ArticleComponent implements OnInit {
         nextid = value.content_id;
       }
     });
-    console.log(Number(this.course_id), " ", nextid);
+    console.log(Number(this.course_id), ' ', nextid);
     this.siteNavigator.goCourseLesson(Number(this.course_id), nextid);
 
     window.location.reload();

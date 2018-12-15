@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +7,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularweb';
-  value = '';
 
   constructor(private router: Router) {
   }
@@ -28,9 +26,11 @@ export class AppComponent {
   goSiteMap() {
     this.router.navigate(['/map']);
   }
+
   onEnter(value: string) {
-    this.value = value;
-    this.router.navigate(['/search', value]);
-    window.location.reload();
+    if (value !== '') {
+      this.router.navigate(['/search', value]);
+      window.location.reload();
+    }
   }
 }

@@ -9,9 +9,11 @@
   flex: 1 1 auto;
   text-align: center;
 }
-.main-icon-style{
+
+.main-icon-style {
   margin: 8px;
 }
+
 #container, .main-container {
   padding: 16px !important;
   margin-left: 10%;
@@ -31,6 +33,7 @@
 .text-size {
   font-size: 14pt;
 }
+
 .search-field {
   margin: 8px;
   padding-left: 8px;
