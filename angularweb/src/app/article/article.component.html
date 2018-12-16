@@ -1,7 +1,7 @@
 <div class="container main-container">
   <h1>{{ this.title }}</h1>
   <mat-divider></mat-divider>
-  <p class="col">{{ this.lessonPage }}</p>
+  <p class="col" [innerHTML]="lessonPage"></p>
   <div class="row buttons">
     <button mat-raised-button color="primary" class="prev-button"
             [disabled]="this.pageOrder.prevPageID == -1"

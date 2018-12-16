@@ -1,6 +1,6 @@
 <div class="container main-container">
   <h1>{{this.title}}</h1>
   <mat-divider></mat-divider>
-  <p class="col">{{ this.lessonPage }}</p>
+  <p class="col" [innerHTML]="lessonPage"></p>
   <disqus [identifier]=this.comment_id></disqus>
 </div>
