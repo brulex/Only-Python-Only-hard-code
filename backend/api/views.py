@@ -49,6 +49,12 @@ class SingleArticleViewById(generics.ListAPIView):
 
 
 # View of Courses
+class SingleCoursesViewById(generics.ListAPIView):
+    serializer_class = CourseTitleSerializer
+
+    def get_queryset(self):
+        id = self.kwargs.get('course_id')
+        return Courses.objects.filter(id=id)
 
 
 class ListOfAllCoursesView(generics.ListAPIView):
