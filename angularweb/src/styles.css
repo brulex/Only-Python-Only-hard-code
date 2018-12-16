@@ -42,4 +42,6 @@ table {
 tr {
     background: #d0d0e0;
 }
-
+.mat-radio-label{
+  white-space: normal !important;
+}
