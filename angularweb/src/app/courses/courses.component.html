@@ -4,7 +4,7 @@
   <p>Обзор различных курсов программирования на Python.</p>
   <mat-list>
     <mat-list-item *ngFor="let courseItem of coursesList">
-      <button class="navigation-button" mat-flat-button mat-line (click)="this.siteNavigator.goCourse(courseItem.content_id, courseItem.title)"
+      <button class="navigation-button" mat-flat-button mat-line (click)="this.siteNavigator.goCourse(courseItem.content_id)"
              >{{courseItem.title}}
       </button>
     </mat-list-item>

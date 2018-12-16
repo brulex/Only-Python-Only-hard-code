@@ -14,6 +14,10 @@ export class CourseService {
     return this.http.get<any>('http://127.0.0.1:8000/api/courses/');
   }
 
+  getCourseInfo(course_id: string) {
+    return this.http.get<any>('http://127.0.0.1:8000/api/course/' + course_id + '/');
+  }
+
   getCourseContent(course_id: string) {
     return this.http.get<any>('http://127.0.0.1:8000/api/courses/' + course_id + '/');
   }
