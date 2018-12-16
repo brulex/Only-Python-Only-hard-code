@@ -69,8 +69,8 @@ class Answer(models.Model):
 
 class Question(models.Model):
 
-    question = models.CharField(
-        max_length=255,
+    question = models.TextField(
+        max_length=1000,
         null=False
     )
 
