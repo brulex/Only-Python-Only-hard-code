@@ -22,7 +22,6 @@ export class LessonComponent implements OnInit {
   ngOnInit() {
     this.content_id = this.activatedRoute.snapshot.paramMap.get('content_id');
     this.lessonService.getLessonContent(this.content_id).subscribe(value => {
-      console.log(this.lessonPage = value[0].content);
       this.title = value[0].title;
       this.lessonPage = value[0].content;
       this.comment_id = value[0].comment_id;

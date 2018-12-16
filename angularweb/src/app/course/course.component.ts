@@ -27,7 +27,6 @@ export class CourseComponent implements OnInit {
   ngOnInit() {
     this.content_id = this.activatedRoute.snapshot.paramMap.get('course_id');
     this.activatedRoute.queryParams.subscribe(params => {
-      // Defaults to 0 if no query param provided.
       this.name = params['name'];
     });
     this.courseService.getCourseContent(this.content_id).subscribe(value => {
@@ -49,7 +48,6 @@ export class CourseComponent implements OnInit {
             content_id: element.id
           });
         });
-        console.log(this.questionsList);
       },
       error => {
         alert(JSON.parse(error));

@@ -33,11 +33,9 @@ export class ArticleComponent implements OnInit {
     this.course_id = this.activatedRoute.snapshot.paramMap.get('course_id');
     this.content_id = this.activatedRoute.snapshot.paramMap.get('content_id');
     this.courseService.getCourseLessonContent(this.course_id, this.content_id).subscribe(value => {
-      console.log(this.lessonPage = value[0].content);
       this.title = value[0].title;
       this.lessonPage = value[0].content;
       this.comment_id = value[0].comment_id;
-      console.log(this.lessonPage, this.comment_id);
     }, error => {
       alert(JSON.parse(error));
     });
@@ -62,8 +60,6 @@ export class ArticleComponent implements OnInit {
             this.pageOrder.nextPageID = element.id;
           }
         });
-        console.log(this.courseLessonsList);
-        console.log(this.pageOrder);
       }, error => {
         alert(error);
       }
@@ -73,12 +69,10 @@ export class ArticleComponent implements OnInit {
   onNextClick() {
     let nextid = 0;
     this.courseLessonsList.forEach(value => {
-      if (value.order_in_course == this.pageOrder.pageID + 1) {
+      if (value.order_in_course === this.pageOrder.pageID + 1) {
         nextid = value.content_id;
       }
     });
-    console.log(Number(this.course_id), ' ', nextid);
-
     this.siteNavigator.goCourseLesson(Number(this.course_id), nextid);
     window.location.reload();
   }
@@ -86,13 +80,11 @@ export class ArticleComponent implements OnInit {
   onPrevClick() {
     let nextid = 0;
     this.courseLessonsList.forEach(value => {
-      if (value.order_in_course == this.pageOrder.pageID - 1) {
+      if (value.order_in_course === this.pageOrder.pageID - 1) {
         nextid = value.content_id;
       }
     });
-    console.log(Number(this.course_id), ' ', nextid);
     this.siteNavigator.goCourseLesson(Number(this.course_id), nextid);
-
     window.location.reload();
   }
 
