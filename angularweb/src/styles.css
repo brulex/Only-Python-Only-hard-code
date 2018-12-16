@@ -16,6 +16,30 @@ h1 {
   margin-top: 8px;
 }
 
+h2 {
+  text-align: center;
+}
+
+
 input:focus {
   outline: none !important;
 }
+
+pre {
+    background: #efc;
+    display: inline-block;
+    padding: 20px;
+    border: 1px solid #ac9;
+    border-radius: 3px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+
+tr {
+    background: #d0d0e0;
+}
+
