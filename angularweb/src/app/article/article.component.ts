@@ -47,7 +47,7 @@ export class ArticleComponent implements OnInit {
             content_id: element.id,
             order_in_course: element.order_in_course
           });
-          if (element.id === this.content_id) {
+          if (Number(element.id) === Number(this.content_id)) {
             this.pageOrder.pageID = element.order_in_course;
           }
         });
