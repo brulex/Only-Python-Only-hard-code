@@ -63,6 +63,8 @@ export class QuestionComponent implements OnInit {
           this.receive++;
           value.verified = response.verified === 1;
           this.rating += response.verified === 1 ? (100 / this.questionsList.length) : 0;
+
+          this.rating = Number(this.rating.toFixed(2));
         }, error => {
           alert(error);
         });
