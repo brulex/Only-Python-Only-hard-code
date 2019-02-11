@@ -1,7 +1,5 @@
 from django.contrib import admin
 from .models import Articles, Courses, Question, Answer
-from django.db import models
-from django.forms import CheckboxSelectMultiple
 
 
 class QuestionAdmin(admin.ModelAdmin):
